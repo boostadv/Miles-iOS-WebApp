@@ -1,0 +1,106 @@
+*{
+   box-sizing:border-box; 
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+	background-color: #2C2D32;
+	color: #fafafa;
+  font-size: 21px;
+}
+
+.content {
+
+  height: 100%;
+	text-align: center;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  right: 30px;
+  
+}
+
+.content h1 {
+  font-size: 200%;
+  letter-spacing: 0.1em;
+  margin-bottom: 15px;
+      margin-bottom: 0;
+    margin-top: 5px;
+}
+
+
+
+.content p, .content small {
+  font-size: 80%;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.content img {
+ margin: 20% auto 20%;
+ max-height: 40px;
+}
+
+a[type="button"], button {
+  position: absolute;
+  bottom: 30px;
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    margin-bottom: 0px;
+    line-height: 2.5;
+    font-size: 80%;
+    font-family: 'Fira Sans', sans-serif;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid #1B1C1D;
+    border-radius: 4px;
+    color: #1B1C1D;
+    background-color: #ECAD20;
+    text-decoration: none;
+}
+
+a[type="button"] i, button i {
+  padding-right: 10px;
+}
+
+form {
+  margin-top: 15%;
+}
+
+.form-group {
+width: 100%;
+}
+
+.form-group .fa {
+	color: #2C2D32;
+	position: relative;
+	top: -29px;
+	float: left;
+	left: 10px;
+}
+
+
+
+form input {
+padding: 10px;
+  position: inline-block;
+  width: 100%;
+
+border-radius: 4px;
+border: none;
+padding-left: 40px;
+ font-family: 'Fira Sans', sans-serif;
+}
+
+.content p {
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-height:480px) {
+  .content img {
+  margin-bottom: 15%;
+}
+}
