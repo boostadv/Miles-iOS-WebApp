@@ -15,9 +15,9 @@ namespace MilesWebApp.Controllers
     {
         // GET: api/values
         [HttpPost]
-        public string GetMiles([FromBody]UserModel user)
+        public IActionResult GetMiles(UserModel user)
         {
-            return _loadData(user.Login, user.Password).Result;
+            return new JsonResult(new {Miles = _loadData(user).Result });
         }
 
         public class UserModel
@@ -26,15 +26,15 @@ namespace MilesWebApp.Controllers
             public string Password { get; set; }
         }
 
-        private async Task<string> _loadData(string login, string password)
+        private async Task<string> _loadData(UserModel user)
         {
             string url = "http://www.iglobe.ru/cabinet_login?next=cabinet/booking";
 
             var formContent = new FormUrlEncodedContent(new[]
              {
                     new KeyValuePair<string, string>("site_auth", "sent"),
-                    new KeyValuePair<string, string>("usr", login),
-                    new KeyValuePair<string, string>("pwd", password)
+                    new KeyValuePair<string, string>("usr", user.Login),
+                    new KeyValuePair<string, string>("pwd", user.Password)
             });
 
 
@@ -55,7 +55,7 @@ namespace MilesWebApp.Controllers
             }
             else
             {
-                return "Ошибка";
+                return "Error";
             }
         }
     }
